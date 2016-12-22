@@ -22,7 +22,11 @@ Spring boot starter hessian。
               }
           }
           
-* hessian服务最终会以"/userService" 发布出去。
+* hessian服务最终会以"/userService" 发布出去，客户端代码调用如下，当然你可以可以创建一个Bean。
+
+      String url = "http://localhost:8080/userService";
+      HessianProxyFactory factory = new HessianProxyFactory();
+      UserService basic = (UserService) factory.create(UserService.class, url);
 
 ### 参考文档
 
